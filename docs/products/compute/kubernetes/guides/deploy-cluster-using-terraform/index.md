@@ -1,8 +1,7 @@
 ---
 description: "In this tutorial, you'll deploy a Kubernetes cluster using the Linode Kubernetes Engine (LKE) and Terraform."
 keywords: ['kubernetes','terraform','infrastructure as code','container orchestration']
-tags: ["linode platform","kubernetes","automation"]
-license: '[CC BY-ND 4.0](https://creativecommons.org/licenses/by-nd/4.0)'
+tags: ["linode platform","kubernetes","automation","managed hosting"]
 published: 2020-05-05
 modified: 2023-02-09
 modified_by:
@@ -72,7 +71,7 @@ Terraform defines the elements of your Linode infrastructure inside of configura
       required_providers {
         linode = {
           source = "linode/linode"
-          version = "1.27.1"
+          version = "2.7.1"
         }
       }
     }
@@ -150,7 +149,7 @@ You are now ready to define the input variables that were referenced in your `ma
 
     variable "k8s_version" {
       description = "The Kubernetes version to use for this cluster. (required)"
-      default = "1.25"
+      default = "1.26"
     }
 
     variable "label" {
@@ -188,7 +187,7 @@ You are now ready to define the input variables that were referenced in your `ma
     }
     ```
 
-    This file describes each variable and provides them with default values. You should review and update the file with your own preferred default values, ensuring that they match currently available [versions of Kubernetes on LKE](/docs/products/compute/kubernetes/release-notes/), as well as [Available Plans](/docs/products/compute/compute-instances/plans/choosing-a-plan/) and [Data Centers](/docs/guides/how-to-choose-a-data-center/)
+    This file describes each variable and provides them with default values. You should review and update the file with your own preferred default values, ensuring that they match currently available [versions of Kubernetes on LKE](/docs/products/compute/kubernetes/release-notes/), as well as [Available Plans](/docs/products/compute/compute-instances/plans/choosing-a-plan/) and [Data Centers](/docs/products/platform/get-started/guides/choose-a-data-center/)
 
 ### Assign Values to your Input Variables
 
@@ -202,7 +201,7 @@ You will now need to define the values you would like to use in order to create 
 
     ```file {title="~/terraform/lke-cluster/terraform.tfvars"}
     label = "example-lke-cluster"
-    k8s_version = "1.25"
+    k8s_version = "1.26"
     region = "us-west"
     pools = [
       {

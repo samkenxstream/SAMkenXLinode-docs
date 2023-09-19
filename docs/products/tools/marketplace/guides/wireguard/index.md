@@ -3,7 +3,6 @@ description: 'Deploy a WireGuard Server on Linode with Marketplace Apps.'
 keywords: ['vpn','wireguard','tunnel']
 tags: ["cloud-manager","linode platform","security","marketplace","vpn"]
 bundles: ['network-security']
-license: '[CC BY-ND 4.0](https://creativecommons.org/licenses/by-nd/4.0)'
 published: 2019-03-28
 modified: 2022-03-08
 modified_by:
@@ -42,7 +41,7 @@ Your WireGuard configuration can be adjusted after you first set up your Marketp
 
 ## Configuration Options
 
-- **Supported distributions:** Debian 11
+- **Supported distributions:** Ubuntu 22.04 LTS
 - **Recommended minimum plan:** All plan types and sizes can be used. The plan that you select should be appropriate for the amount of data transfer, users, and other stress that may affect the performance of your VPN.
 
 ### WireGuard Options
